@@ -1,0 +1,30 @@
+{
+  "name": "picklogic-demo",
+  "version": "1.0.0",
+  "description": "Demo of a JS engine to pick among JSON objects based on simple logic conditions",
+  "main": "lib/index.js",
+  "repository": "git@github.com:GlobalStrategies/picklogic.git",
+  "author": "Elon Danziger <elon.danziger@globalstrategies.org>",
+  "license": "Apache-2.0",
+  "private": false,
+  "scripts": {
+    "build:commonjs": "babel src -d lib",
+    "demo": "rimraf lib && npm run build:commonjs && node ./lib/index.js"
+  },
+  "dependencies": {
+    "chalk": "^4.0.0",
+    "enquirer": "^2.3.5",
+    "picklogic-json": "^1.0.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.6",
+    "@babel/plugin-transform-modules-commonjs": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/preset-flow": "^7.9.0",
+    "babel-loader": "^8.1.0",
+    "cross-env": "^7.0.2",
+    "flow-bin": "^0.125.1",
+    "rimraf": "^3.0.2"
+  }
+}
