@@ -23,7 +23,7 @@
 // @flow
 
 
-import * as PickLogic from 'picklogic-json';
+import * as PickLogic from 'picklogic';
 const { Select, NumberPrompt } = require('enquirer');
 const chalk = require('chalk');
 
@@ -154,13 +154,15 @@ const TEMP_PICKABLES: Array<PickLogic.PickableObject> = [
 ]
 
 function readout() {
-    console.log(chalk.yellowBright.bold('\n\nJSON PickLogic, at your service.'));
-    console.log(chalk.yellowBright('\nThe governing JSON logic may be expressed as:\n'));
+    console.log(chalk.bold('\n\nJSON PickLogic, at your service.'));
+    console.log('\nThe conditional JSON objects in this demo can be ‘read out’ as:\n');
     TEMP_PICKABLES.forEach(p => {
         const pickable = new PickLogic.Pickable(p);
-        console.log(pickable.readoutsForPickableWithLocalized());
-        console.log(chalk.cyanBright(`----> ${p.payload.message}\n`));
+        const readouts = pickable.readoutsForPickableWithLocalized();
+        readouts.forEach(r => console.log(chalk.cyanBright(`${r.conjunction} ${r.conditionString}`)));
+        console.log(chalk.yellowBright(`THEN DELIVER PAYLOAD "${p.payload.message}"\n`));
     })    
+    console.log('\nNow let’s run the conditions against data you enter.');
 }
 function demo() {
     console.log('\n');
@@ -189,7 +191,7 @@ function demo() {
             }
             const picker = new PickLogic.Picker(TEMP_PICKABLES);
             const pick: PickLogic.PickableObject = picker.pickForData(data);
-            console.log(chalk.cyanBright('\n' + pick.payload.message + '\n'));
+            console.log(chalk.yellowBright('\n' + pick.payload.message + '\n'));
         }).catch(e => console.log(e))
     }).catch(e => console.log(e))
 }

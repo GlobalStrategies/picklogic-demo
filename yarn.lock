@@ -1805,10 +1805,10 @@ path-parse@^1.0.6:
   resolved "https://registry.yarnpkg.com/path-parse/-/path-parse-1.0.6.tgz#d62dbb5679405d72c4737ec58600e9ddcf06d24c"
   integrity sha512-GSmOT2EbHrINBf9SR7CDELwlJ8AENk3Qn7OikK4nFYAu3Ote2+JYNVvkpAEQm3/TLNEJFD/xZJjzyxg3KBWOzw==
 
-picklogic-json@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/picklogic-json/-/picklogic-json-1.0.1.tgz#94e9797cbbd438e08b30e615658487e458b6627a"
-  integrity sha512-o+TUYv90L7WgYXFHRep1F/J6+E7KlsVgtCRuMepsFB0AjTzVfqe1OJeeScy9OI3JA43p7W7HCRCKGMfed8nkMA==
+picklogic@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/picklogic/-/picklogic-1.0.0.tgz#0c080ed93a3d1cc26de2011859c79fc78a3ba958"
+  integrity sha512-POuXej1ZOqWjyFpiIFPbP60MG8/pP+Yeq0xKiTJsZKAshHR3qDbPGdNwL9fhYCbdGy04GXH1A7a85dsUN2c5Ug==
   dependencies:
     global "^4.4.0"
 
